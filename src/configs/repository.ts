@@ -20,21 +20,17 @@ class Repository {
       const fetch = await this.fetchData().run()
       const code = fetch.status
       const result = fetch.data
+      console.log('fetch result', result)
       if (code === 201) {
         data.result = fetch.data
         data.message = fetch.data.Detail
       } else if (code === 200) {
         // eslint-disable-next-line no-prototype-builtins
-        if (typeof result.Data === 'object' || Array.isArray(result.Data)) {
-          data.result = result.Data
-          data.count = result.Count
-          data.pagesize = result.PageSize
-          data.pagenumber = result.PageNumber
-          data.message = 'berhasil ditampilkan'
-        } else {
-          data.message = `${result.Header} ${result.Detail}`
-          data.result = result
-        }
+        data.result = result.results
+        data.count = result.total_results
+        data.pagesize = result.total_pages
+        data.pagenumber = result.page
+        data.message = 'berhasil ditampilkan'
       } else {
         data.error = true
         data.message = `${fetch.data.Header} ${fetch.data.Detail}`

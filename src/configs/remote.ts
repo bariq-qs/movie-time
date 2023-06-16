@@ -5,6 +5,7 @@
 import api from '@/configs/api'
 import { IRemote } from '@/utils/interfaces/iRemote'
 import remoteEnum from '@/utils/enum/enumActions'
+import environment from './environtment'
 
 // eslint-disable-next-line no-shadow
 
@@ -22,13 +23,20 @@ class Remote implements IRemote {
     this.endPoint = endPoint
     this.header = header
     this.data = data
-    this.header.timeout = 5000
+    // this.header.timeout = 5000
   }
 
   get() {
     const remote = (this.header) ? api.get(this.endPoint, {
-      headers: this.header
-    }) : api.get(this.endPoint)
+      headers: this.header,
+      params: {
+        api_key: environment.API_KEY
+      }
+    }) : api.get(this.endPoint, {
+      params: {
+        api_key: environment.API_KEY
+      }
+    })
     return remote
   }
 
