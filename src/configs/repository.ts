@@ -20,7 +20,6 @@ class Repository {
       const fetch = await this.fetchData().run()
       const code = fetch.status
       const result = fetch.data
-      console.log('fetch result', result)
       if (code === 201) {
         data.result = fetch.data
         data.message = fetch.data.Detail

@@ -64,15 +64,6 @@
 }
 
 .layout-main {
-  // background: $color-background;
-  // background: linear-gradient(
-  //   to top,
-  //   pink 0%,
-  //   pink 50%,
-  //   paleturquoise 50%,
-  //   paleturquoise 100%
-  // )
-  // background-color: aliceblue;
   margin-left: 0;
   padding: 65px 0 0 0;
   min-height: 100vh;
@@ -86,4 +77,13 @@
 
 .layout-wrapper {
   min-height: 100vh;
+}
+
+.layout-footer {
+  background: rgba(0, 0, 0, 0.29);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px 0 100px;
 }

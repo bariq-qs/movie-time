@@ -23,7 +23,7 @@
                 <p>Sci-Fi</p>
               </div>
             </div>
-            <p class=" text-xs">{{ data.overview }}</p>
+            <p class=" text-xs text-justify">{{ data.overview }}</p>
           </div>
         </div>
       </div>
@@ -32,15 +32,15 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable import/extensions */
 import { defineComponent, onMounted, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { EffectCoverflow, Pagination } from 'swiper'
 import InlineSvg from 'vue-inline-svg'
-/* eslint-disable */
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
-import apiUseCase from '@/usecase/apiUseCase'
+import { movieUseCase } from '@/usecase'
 import IResponse from '@/utils/interfaces/iResponse'
 import environtment from '@/configs/environtment'
 import { IPopularMovie } from '@/utils/interfaces/iMovie'
@@ -56,7 +56,7 @@ export default defineComponent({
   setup() {
     const listMovies = ref<IPopularMovie[]>([])
     const getData = () => {
-      apiUseCase.get('/movie/popular').then((res: IResponse) => {
+      movieUseCase.getPopular().then((res: IResponse) => {
         if (!res.error) {
           const mapData = res.result.map((mov: IPopularMovie) => ({
             ...mov,

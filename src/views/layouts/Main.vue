@@ -8,17 +8,20 @@
         </router-view>
       </div>
     </div>
+    <FooterMain />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HeaderMain from '@/components/header/HeaderMain.vue'
+import FooterMain from '@/components/footer/FooterMain.vue'
 
 export default defineComponent({
   name: 'MainLayout',
   components: {
-    HeaderMain
+    HeaderMain,
+    FooterMain
   }
 })
 </script>

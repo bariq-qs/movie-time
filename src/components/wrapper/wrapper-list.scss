@@ -1,0 +1,28 @@
+@import '@/styles/scss/variable.scss';
+
+.wrapper-list {
+  background: linear-gradient(to top,
+      $dark-1 0%,
+      $dark-1 80%,
+      $dark-2 80%,
+      $dark-2 100%);
+      padding: 80px 100px 80px 100px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .divider {
+      height: 6px;
+      width: 112px;
+      background: $orange-1;
+    }
+
+    .title-text {
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+}

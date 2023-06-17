@@ -32,7 +32,12 @@ module.exports = {
     ],
     semi: ['error', 'never'],
     'global-require': 'off',
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'class-methods-use-this': 'off',
+    'import/prefer-default-export': 'off',
+    'vuejs-accessibility/mouse-events-have-key-events': 'off',
+    'vue/setup-compiler-macros': true,
+    'vue/no-dupe-keys': 'off',
   },
   overrides: [
     {
