@@ -25,11 +25,15 @@ class Repository {
         data.message = fetch.data.Detail
       } else if (code === 200) {
         // eslint-disable-next-line no-prototype-builtins
-        data.result = result.results
-        data.count = result.total_results
-        data.pagesize = result.total_pages
-        data.pagenumber = result.page
-        data.message = 'berhasil ditampilkan'
+        if (Array.isArray(result.results)) {
+          data.result = result.results
+          data.count = result.total_results
+          data.pagesize = result.total_pages
+          data.pagenumber = result.page
+          data.message = 'berhasil ditampilkan'
+        } else {
+          data.result = result
+        }
       } else {
         data.error = true
         data.message = `${fetch.data.Header} ${fetch.data.Detail}`

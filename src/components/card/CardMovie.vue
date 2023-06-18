@@ -13,7 +13,7 @@
             <p class=" font-semibold text-lg">Action</p>
           </div>
           <div class=" flex justify-center">
-            <div class=" rounded-full bg-danger1 mt-8 flex mx-auto cursor-pointer">
+            <div class=" rounded-full bg-danger1 mt-8 flex mx-auto cursor-pointer" @click="toDetail()">
               <p class=" text-grey1 text-sm font-bold  px-4 py-1">VIEW</p>
             </div>
           </div>
@@ -38,6 +38,7 @@ import InlineSvg from 'vue-inline-svg'
 import $ from 'jquery'
 import { IPopularMovie } from '@/utils/interfaces/iMovie'
 import moment from 'moment'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'CardMovie',
@@ -57,18 +58,28 @@ export default defineComponent({
   setup(props) {
     const idx = computed(() => props.idx)
     const data = computed(() => props.data)
+    const router = useRouter()
     const onHoverEnter = (index: number) => {
       $(`.poster-active:eq(${index})`).removeClass('invisible')
     }
     const onHoverLeave = (index: number) => {
       $(`.poster-active:eq(${index})`).addClass('invisible')
     }
+    const toDetail = () => {
+      router.push({
+        name: 'movie-detail',
+        params: {
+          id: data.value.id
+        }
+      })
+    }
     return {
       onHoverEnter,
       onHoverLeave,
       idx,
       data,
-      moment
+      moment,
+      toDetail
     }
   }
 })

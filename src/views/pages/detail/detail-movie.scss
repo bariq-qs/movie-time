@@ -1,0 +1,174 @@
+.detail-movie {
+  .header-detail {
+    .content {
+      padding-top: 40vh;
+      position: relative;
+
+      .wrap-title {
+        padding: 0 100px 0 350px;
+      }
+
+      .black-section {
+        padding: 17px 100px 17px 350px;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .item-title {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .item-subtitle {
+          color: #FFFFFF;
+        }
+
+        .item-title,
+        .item-subtitle {
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 12px;
+        }
+
+        .container-item {
+          border-right: 1px solid rgba(255, 255, 255, 0.2);
+          padding-right: 30px;
+          padding-left: 30px;
+          display: flex;
+          align-items: center;
+        }
+
+        .container-item:first-child {
+          padding-left: 0;
+        }
+
+        .container-item:last-child {
+          padding-right: 0;
+          border-right: initial;
+        }
+      }
+
+      img {
+        left: 0;
+        margin-left: 100px;
+        position: absolute;
+        height: 320px;
+        width: 200px;
+      }
+    }
+  }
+
+  .wrap-title .title,
+  .black-section .title,
+  .overview-section .comment-wrap .rtg-title {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  .overview-section {
+    background: #FFFFFF;
+    padding: 20px 0 20px 0;
+
+    .ovrvw-wrap {
+      padding: 17px 100px 17px 350px;
+    }
+
+    .comment-wrap {
+      padding: 17px 100px 17px 100px;
+
+      .card-comment {
+        background: #F9F9F9;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 14px;
+        padding: 24px;
+      }
+    }
+  }
+
+  .recomend-movies {
+    padding: 40px 100px 40px 100px;
+    background-color: #1e232b;
+  }
+}
+
+// laptop
+@media screen and (max-width: 1024px) {
+  .detail-movie {
+    .header-detail {
+      .content {
+        padding-top: 20vh;
+
+        .wrap-title {
+          padding: 0 50px 0 300px;
+        }
+
+        .black-section {
+          padding: 17px 50px 17px 300px;
+
+          .container-item {
+            margin-bottom: 5px;
+            border-right: none;
+            padding-right: 25px;
+            padding-left: 0;
+          }
+        }
+
+        img {
+          margin-left: 50px;
+        }
+      }
+    }
+
+    .overview-section {
+      .ovrvw-wrap {
+        padding: 17px 50px 17px 300px;
+      }
+
+      .comment-wrap {
+        padding: 17px 50px 17px 50px;
+      }
+    }
+
+    .recomend-movies {
+      padding: 40px 50px 40px 50px;
+    }
+  }
+}
+
+// tablet
+@media screen and (max-width: 768px) {
+  .detail-movie {
+    .header-detail {
+      .content {
+        padding-top: 10vh;
+        .wrap-title {
+          padding: 0 30px 0 30px;
+        }
+
+        .black-section {
+          padding: 17px 30px 17px 30px;
+
+          .container-item {
+            padding-right: 25px;
+          }
+        }
+
+        img {
+          margin-left: 50px;
+          display: none;
+        }
+      }
+    }
+
+    .overview-section {
+      .ovrvw-wrap {
+        padding: 17px 30px 17px 30px;
+      }
+
+      .comment-wrap {
+        padding: 17px 30px 17px 30px;
+      }
+    }
+
+    .recomend-movies {
+      padding: 40px 30px 40px 30px;
+    }
+  }
+}

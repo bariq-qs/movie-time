@@ -2,7 +2,6 @@
 
 .layout-topbar {
   position: fixed;
-  height: 66px;
   padding: 15px 100px 15px 100px;
   z-index: 2;
   right: 0;
@@ -11,32 +10,40 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12);
   transition: all 0.5s ease;
   display: flex;
+  gap: 4px;
   align-items: center;
   justify-content: space-between;
+
   .logo-header {
     width: 100px;
   }
+
   .search-header {
     // background-color: aquamarine;
-    max-width: 550px;
     width: 550px;
+
     .wrap-srch-input {
       display: flex;
       align-items: center;
       position: relative;
-      .left-ic, .right-ic {
+
+      .left-ic,
+      .right-ic {
         position: absolute;
       }
+
       .left-ic {
         left: 0;
         margin-left: 12px;
       }
+
       .right-ic {
         right: 0;
         margin-right: 12px;
         width: 16px;
         height: 16px;
       }
+
       input.p-inputtext.p-component.input-header {
         background-color: #24282f;
         font-size: 16px;
@@ -46,13 +53,16 @@
         border: transparent;
         color: #E5E5E5;
       }
+
       input.p-inputtext.p-component.input-header::placeholder {
         color: #E5E5E5;
         font-weight: 400;
       }
+
       input.input-header.p-inputtext:enabled:hover {
         border-color: transparent;
       }
+
       input.input-header.p-inputtext:enabled:focus {
         outline: none;
         outline-offset: initial;
@@ -60,6 +70,10 @@
         border-color: transparent;
       }
     }
+  }
+
+  .menus-header {
+    gap: 3.5rem
   }
 }
 
@@ -86,4 +100,33 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 100px 0 100px;
+}
+
+// Laptop
+@media screen and (max-width: 1024px) {
+  .layout-topbar {
+    padding: 15px 30px 15px 30px;
+
+    .menus-header {
+      gap: 2rem
+    }
+
+    .search-header {
+      width: 200px;
+    }
+  }
+
+  .layout-footer {
+    padding: 0 30px 0 30px;
+  }
+}
+
+// tablet
+@media screen and (max-width: 768px) {
+  .layout-topbar {
+    padding: 15px 30px 15px 30px;
+    .search-header {
+      display: none;
+    }
+  }
 }

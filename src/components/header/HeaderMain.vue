@@ -1,6 +1,8 @@
 <template>
   <header class="layout-topbar">
-    <InlineSvg :src="require('@/assets/moovie-time-logo.svg')" class="logo-header" />
+    <router-link :to="{ name: 'home' }">
+      <InlineSvg :src="require('@/assets/moovie-time-logo.svg')" class="logo-header" />
+    </router-link>
     <div class="search-header">
       <div class="wrap-srch-input">
         <InlineSvg :src="require('@/assets/icon/video.svg')" class="left-ic" />
@@ -8,7 +10,7 @@
         <InlineSvg :src="require('@/assets/icon/search.svg')" class="right-ic" />
       </div>
     </div>
-    <div class="menus-header flex gap-14 items-center">
+    <div class="menus-header flex items-center">
       <div class="flex items-center gap-4" v-for="(menu, idx) in listMenus" :key="idx">
         <InlineSvg :src="menu.icon" v-if="menu.icon" />
         <p class=" font-semibold text-sm text-grey1">{{ menu.title }}</p>

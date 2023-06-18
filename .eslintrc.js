@@ -38,6 +38,7 @@ module.exports = {
     'vuejs-accessibility/mouse-events-have-key-events': 'off',
     'vue/setup-compiler-macros': true,
     'vue/no-dupe-keys': 'off',
+    'vuejs-accessibility/click-events-have-key-events': 'off'
   },
   overrides: [
     {

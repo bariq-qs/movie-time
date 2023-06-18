@@ -17,6 +17,18 @@ class MovieUseCase {
     const params = returnUrlPrams(filters)
     return new Repository((new Remote(remoteEnum.get, `/discover${prefixEndpoint}${params}`))).getResult()
   }
+
+  getDetailMovie(id: number): Promise<Response> {
+    return new Repository((new Remote(remoteEnum.get, `${prefixEndpoint}/${id}`))).getResult()
+  }
+
+  getReview(movieId: number): Promise<Response> {
+    return new Repository((new Remote(remoteEnum.get, `${prefixEndpoint}/${movieId}/reviews`))).getResult()
+  }
+
+  getRecommend(movieId: number): Promise<Response> {
+    return new Repository((new Remote(remoteEnum.get, `${prefixEndpoint}/${movieId}/recommendations`))).getResult()
+  }
 }
 
 const movieUseCase = new MovieUseCase()
