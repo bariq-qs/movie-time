@@ -36,7 +36,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'import/prefer-default-export': 'off',
     'vuejs-accessibility/mouse-events-have-key-events': 'off',
-    'vue/setup-compiler-macros': true,
+    'vue/setup-compiler-macros': 'off',
     'vue/no-dupe-keys': 'off',
     'vuejs-accessibility/click-events-have-key-events': 'off'
   },
