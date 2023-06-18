@@ -3,3 +3,44 @@
 .background-sort-nonactive {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+.input-primary.p-dropdown:not(.p-disabled):hover {
+  border-color: transparent;
+}
+
+.input-primary.p-dropdown:not(.p-disabled).p-focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.p-dropdown-panel {
+  background: #111419;
+}
+
+.input-danger.p-checkbox {
+  .p-checkbox-box {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+.input-danger.p-checkbox.p-checkbox-checked {
+  .p-checkbox-box {
+    background: #E74C3C;
+    svg path {
+      fill: white;
+    }
+  }
+}
+
+.input-danger.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+  border-color: #E74C3C;
+}
+
+.input-danger.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+  background: #E74C3C;
+}
+.input-danger.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+  box-shadow: none;
+  border-color: transparent;
+}

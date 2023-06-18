@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Main from '@/views/layouts/Main.vue'
 import Home from '@/views/pages/home/Home.vue'
-import DetailMovie from '@/views/pages/detail/DetailMovie.vue'
+import DetailMovie from '@/views/pages/movie/detail/DetailMovie.vue'
+import Movie from '@/views/pages/movie/Movie.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,7 +15,12 @@ const routes: Array<RouteRecordRaw> = [
       component: Home
     },
     {
-      path: 'movie/:id',
+      path: 'movie',
+      name: 'movie',
+      component: Movie
+    },
+    {
+      path: 'movie/detail/:id',
       name: 'movie-detail',
       component: DetailMovie
     }]

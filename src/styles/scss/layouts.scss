@@ -77,6 +77,20 @@
   }
 }
 
+.p-overlaypanel.overlay-categories {
+  .p-overlaypanel-content {
+    background: white;
+    border-radius: 6px;
+  }
+}
+
+.p-overlaypanel.overlay-search {
+  .p-overlaypanel-content {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 6px;
+  }
+}
+
 .layout-main {
   margin-left: 0;
   padding: 65px 0 0 0;
@@ -125,6 +139,7 @@
 @media screen and (max-width: 768px) {
   .layout-topbar {
     padding: 15px 30px 15px 30px;
+
     .search-header {
       display: none;
     }

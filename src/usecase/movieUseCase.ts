@@ -29,6 +29,11 @@ class MovieUseCase {
   getRecommend(movieId: number): Promise<Response> {
     return new Repository((new Remote(remoteEnum.get, `${prefixEndpoint}/${movieId}/recommendations`))).getResult()
   }
+
+  getSearch(filters: any): Promise<Response> {
+    const params = returnUrlPrams(filters)
+    return new Repository((new Remote(remoteEnum.get, `search${prefixEndpoint}${params}`))).getResult()
+  }
 }
 
 const movieUseCase = new MovieUseCase()

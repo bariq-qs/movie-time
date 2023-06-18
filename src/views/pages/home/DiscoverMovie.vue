@@ -4,14 +4,14 @@
       <div class="flex gap-2 items-center">
         <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
         <div v-for="(sort, idx) in listSort" :key="idx"
-        :class="`cursor-pointer rounded-full ${defaultSort.field === sort.field ? 'bg-danger1' : 'background-sort-nonactive'}`"
-        @click="onSort(sort)">
-        <p class=" text-grey1 text-sm py-1 px-4">{{ sort.title }}</p>
+          :class="`cursor-pointer rounded-full ${defaultSort.field === sort.field ? 'bg-danger1' : 'background-sort-nonactive'}`"
+          @click="onSort(sort)">
+          <p class=" text-grey1 text-sm py-1 px-4">{{ sort.title }}</p>
+        </div>
       </div>
-    </div>
-  </template>
-  <template #content>
-      <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-14">
+    </template>
+    <template #content>
+      <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         <CardMovie v-for="(data, idx) in listMovies" :key="idx" :idx="idx" :data="data" />
       </div>
     </template>

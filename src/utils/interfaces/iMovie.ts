@@ -70,10 +70,16 @@ interface SpokenLanguage {
   name: string
 }
 
+interface IMovieSearch extends IPopularMovie {
+  original_language: string
+  original_title: string
+}
+
 export {
   IPopularMovie,
   ICommentMovie,
   IDetailMovie,
   IGenre,
-  ProductionCompany
+  ProductionCompany,
+  IMovieSearch
 }
